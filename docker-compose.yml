@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  web:
+    image: "couponmanager:latest"
+    ports:
+      - "5000:8080"
+  redis:
+    image: "redis:alpine"
+    networks:
+      coupon-net:
+
+networks:
+  coupon-net:
+
+volumes:
+  coupon-vol:
