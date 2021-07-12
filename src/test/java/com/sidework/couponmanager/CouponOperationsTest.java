@@ -5,6 +5,7 @@ package com.sidework.couponmanager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.sidework.couponmanager.operations.CouponOperations;
 import org.assertj.core.util.DateUtil;
 import org.junit.jupiter.api.Test;
 

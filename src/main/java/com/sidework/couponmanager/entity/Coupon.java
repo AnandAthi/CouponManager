@@ -3,78 +3,43 @@
  */
 package com.sidework.couponmanager.entity;
 
+import com.sidework.couponmanager.operations.CouponOperations;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 import java.util.Date;
 
 /**
  * @author kiamz
  *
  */
+@Data
 public abstract class Coupon {
 
-	private  Long id;
-	private String issuer;
-	private Date expiryDate;
-	private Date effectiveDate;
+	private final String issuer;
+	private final Date expiryDate;
+	private final Date effectiveDate;
+
+	private Long id;
 	private CouponValue value;
 	private CouponTerms terms;
-	
-	Coupon(){
-		
-	}
-	
-	Coupon(String provider,Date effDate,Date expDate){
-		this.id = 1l;
-		this.issuer = provider;
-		this.effectiveDate = effDate;
-		this.expiryDate = expDate;
-	}
+	private CouponOperations couponOperations;
 
-	public CouponTerms getTerms() {
-		return terms;
-	}
-
-	public void setTerms(CouponTerms terms) {
-		this.terms = terms;
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getIssuer() {
-		return issuer;
-	}
-
-	public void setIssuer(String issuer) {
+	Coupon(String issuer, Date expiryDate, Date effectiveDate){
 		this.issuer = issuer;
-	}
-
-	public Date getExpiryDate() {
-		return expiryDate;
-	}
-
-	public void setExpiryDate(Date expiryDate) {
 		this.expiryDate = expiryDate;
-	}
-
-	public Date getEffectiveDate() {
-		return effectiveDate;
-	}
-
-	public void setEffectiveDate(Date effectiveDate) {
 		this.effectiveDate = effectiveDate;
 	}
 
-	public CouponValue getValue() {
-		return value;
+	public void addValue(CouponValue val){
+		this.value = val;
 	}
 
-	public void setValue(CouponValue value) {
-		this.value = value;
+	public void addTerms(CouponTerms trm){
+		this.terms = trm;
 	}
 
+	public void applyOperator(CouponOperations ops){
+		this.couponOperations = ops;
+	}
 }

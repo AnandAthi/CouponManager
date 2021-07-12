@@ -1,13 +1,11 @@
-package com.sidework.couponmanager;
+package com.sidework.couponmanager.operations;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.sidework.couponmanager.entity.Coupon;
-import com.sidework.couponmanager.entity.StoreCoupon;
 
-public class CouponOperations implements CouponManager {
+public class CouponOperations implements Operations {
 
 	private final List<Coupon> coupons = new ArrayList<Coupon>(); 
 	

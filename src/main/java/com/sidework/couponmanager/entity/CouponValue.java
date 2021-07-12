@@ -3,15 +3,15 @@
  */
 package com.sidework.couponmanager.entity;
 
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 /**
  * @author kiamz
  *
  */
+@Data
+@RequiredArgsConstructor
 public class CouponValue {
-
-	String value;
-	
-	CouponValue(String val){
-		this.value = val;
-	}
+	private final String value;
 }

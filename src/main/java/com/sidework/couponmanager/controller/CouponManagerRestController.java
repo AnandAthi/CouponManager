@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sidework.couponmanager.CouponManager;
-import com.sidework.couponmanager.CouponOperations;
+import com.sidework.couponmanager.operations.Operations;
+import com.sidework.couponmanager.operations.CouponOperations;
 import com.sidework.couponmanager.entity.Coupon;
 
 
@@ -18,7 +18,7 @@ public class CouponManagerRestController {
 
 	@GetMapping("/coupon/api/all")
 	public List<Coupon> getAllCoupons() {
-		CouponManager dao = new CouponOperations();
+		Operations dao = new CouponOperations();
 		return dao.getAllCoupons();
 		
 	}
