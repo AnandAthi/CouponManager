@@ -18,8 +18,7 @@ public class CouponManagerRestController {
 
 	@GetMapping("/coupon/api/all")
 	public List<Coupon> getAllCoupons() {
-		Operations dao = new CouponOperations();
-		return dao.getAllCoupons();
+		return null;
 		
 	}
 	
